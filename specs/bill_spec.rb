@@ -26,17 +26,6 @@ describe "Bill" do
     }.must_raise ArgumentError
   end
 
-
-
-  it "can calculate the proper tax assuming 8% tax" do
-
-    # Act
-    tax = @bill.tax
-
-    # Assert
-    tax.must_equal @bill.subtotal * 0.08
-  end
-
   it "can calculate the total price including tax" do
     # Act
     total = @bill.total
@@ -54,5 +43,16 @@ describe "Bill" do
 
     # Assert
     expect(subtotal).must_equal 13.50
+  end
+
+  it "can calculate the proper tax assuming 8% tax" do
+
+    bill = Bill.new([4.75, 8.75])
+
+    # Act
+    tax = bill.tax
+
+    # Assert
+    expect(tax).must_equal bill.subtotal * 0.08
   end
 end
