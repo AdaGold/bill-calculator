@@ -11,17 +11,17 @@ describe "Bill" do
 
   it "can be created" do
     # the class of @bill should be Bill
-    @bill.class.must_equal Bill
+    expect(@bill.class).must_equal Bill
   end
 
   it "will raise an error if created without a list of prices" do
-    proc {
+    expect {
       Bill.new
     }.must_raise ArgumentError
-    proc {
+    expect {
       Bill.new([])
     }.must_raise ArgumentError
-    proc {
+    expect {
       Bill.new(1)
     }.must_raise ArgumentError
   end
@@ -31,7 +31,7 @@ describe "Bill" do
     total = @bill.total
 
     # Assert
-    total = @bill.total.must_equal @bill.subtotal + @bill.tax
+    expect(@bill.total).must_equal @bill.subtotal + @bill.tax
   end
 
   it "can calculate the proper subtotal" do
