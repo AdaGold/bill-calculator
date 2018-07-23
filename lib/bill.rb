@@ -20,8 +20,11 @@ def tax(prices, tax_rate)
 end
 
 
-def total(menu_items, tax_rate)
+def total(menu_items, tax_rate)  
   prices = menu_items.map do |menu_item|
+    if menu_item[:price] === nil
+      raise ArgumentError.new("Menu Items must have a price")
+    end
     menu_item[:price]
   end
 

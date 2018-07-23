@@ -47,4 +47,23 @@ describe "total" do
     expect(total_bill).must_be_close_to -48.94, 0.01
   end
 
+  it "will raise an ArgumentError for an invalid list or tax_rate" do
+    # Arrange
+    bill_items = [
+      {item: "Cesar Salad"},
+      {item: "Tacos"},
+      {item: "Ice Tea"},
+      {item: "Coke"}
+    ]
+
+    # Act-Assert
+    expect {
+      total(bill_items, 0.08)
+    }.must_raise ArgumentError
+
+    expect {
+      total([{item: "Tacos", price: 37}], 'not-a-number')
+    }.must_raise ArgumentError
+
+  end
 end
