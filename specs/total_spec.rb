@@ -1,3 +1,3 @@
-# subtotal_spec.rb
+# total_spec.rb
 
 require_relative '../src/bill'
