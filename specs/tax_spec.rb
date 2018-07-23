@@ -25,7 +25,7 @@ describe "tax" do
 
     # Act-Assert
     expect {
-      sub = tax(prices, tax_rate)
+      tax(prices, tax_rate)
     }.must_raise ArgumentError
   end
 
@@ -42,10 +42,36 @@ describe "tax" do
   end
 
   it "will raise an error for a non-array argument" do
+    # Arrange
+    prices = "not an array"
+    tax_rate = 0.1
+
+    # Act-Assert
+
+    expect {
+      tax(prices, tax_rate)
+    }.must_raise ArgumentError
+
+    # Arrange
+    prices = []
+    tax_rate = "not a number"
+
+    # Act-Assert
+    expect {
+      tax(prices, tax_rate)
+    }.must_raise ArgumentError
 
   end
 
   it "if the total bill is negative (refund), sales tax is 0" do
+    # Arrange
+    prices = [-20]
+    tax_rate = 0.08
 
+    # Act
+    tax = tax(prices, tax_rate)
+
+    # Assert
+    expect(tax).must_equal 0
   end
 end

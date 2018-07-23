@@ -10,5 +10,9 @@ end
 
 
 def tax(prices, tax_rate)
-  return subtotal(prices) * tax_rate
+  if tax_rate < 0 || (tax_rate.class != Integer && tax_rate.class != Float)
+    raise ArgumentError.new("Illegal tax rate")
+  end
+  tax = subtotal(prices) * tax_rate
+  return tax >= 0 ? tax : 0
 end
