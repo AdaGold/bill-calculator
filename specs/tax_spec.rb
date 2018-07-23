@@ -4,7 +4,7 @@ require 'minitest/reporters'
 
 Minitest::Reporters.use!
 
-require_relative '../src/bill'
+require_relative '../lib/bill'
 
 describe "tax" do
   it "can calculate an accurate sales tax" do

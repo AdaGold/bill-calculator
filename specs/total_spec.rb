@@ -1,3 +1,7 @@
 # total_spec.rb
 
-require_relative '../src/bill'
+require_relative '../lib/bill'
+
+describe "total" do
+  
+end

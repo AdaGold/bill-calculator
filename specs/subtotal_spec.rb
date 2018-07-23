@@ -1,12 +1,11 @@
 # subtotal_spec.rb
 
-
 require 'minitest/autorun'
 require 'minitest/reporters'
 
 Minitest::Reporters.use!
 
-require_relative '../src/bill'
+require_relative '../lib/bill'
 
 describe "subtotal" do
   it "can calculate an accurate subtotal" do
