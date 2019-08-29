@@ -1,4 +1,4 @@
-# tax_spec.rb
+# tax_test.rb
 require 'minitest/autorun'
 require 'minitest/reporters'
 

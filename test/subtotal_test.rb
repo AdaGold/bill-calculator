@@ -1,4 +1,4 @@
-# subtotal_spec.rb
+# subtotal_test.rb
 
 require 'minitest/autorun'
 require 'minitest/reporters'
